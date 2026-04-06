@@ -39,7 +39,7 @@ export function BharatFootballLanding() {
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
-                href="https://wa.me/919871141009?text=Hi%20Bharat%20Football%20Academy%2C%20I%27d%20like%20to%20book%20a%20FREE%20trial."
+                href="https://wa.me/919871141009?text=Hi%20Bharat%20Football%20Academy%2C%20I%20want%20to%20book%20a%20free%20trial."
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-cta-trial-btn"
@@ -98,7 +98,7 @@ export function BharatFootballLanding() {
             </div>
           </div>
           <a
-            href="https://wa.me/919871141009?text=Hi%20Bharat%20Football%20Academy%2C%20I%27d%20like%20to%20book%20a%20FREE%20trial."
+            href="https://wa.me/919871141009?text=Hi%20Bharat%20Football%20Academy%2C%20I%20want%20to%20book%20a%20free%20trial."
             target="_blank"
             rel="noopener noreferrer"
             id="urgency-book-btn"

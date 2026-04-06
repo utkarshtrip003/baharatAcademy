@@ -13,7 +13,7 @@ const navLinks = [
 
 const whatsappLink =
   "https://wa.me/919871141009?text=" +
-  encodeURIComponent("Hi Bharat Football Academy, I'd like to book a FREE trial.");
+  encodeURIComponent("Hi Bharat Football Academy, I want to book a free trial.");
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
