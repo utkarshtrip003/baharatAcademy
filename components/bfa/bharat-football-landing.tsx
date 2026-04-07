@@ -6,6 +6,77 @@ import { TrialForm } from "./trial-form";
 const heroImg =
   "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000";
 
+type GalleryItem =
+  | {
+      kind: "simple";
+      src: string;
+      alt: string;
+      label: string;
+    }
+  | {
+      kind: "featured";
+      src: string;
+      alt: string;
+      tag: string;
+      title: string;
+    };
+
+const galleryItems: GalleryItem[] = [
+  {
+    kind: "simple",
+    src: "/website%20shortlisted%20pics/1766918917836.jpg",
+    alt: "Youth football technical drills at training",
+    label: "Technical Drills",
+  },
+  {
+    kind: "featured",
+    src: "/website%20shortlisted%20pics/1766918918062.JPG",
+    alt: "Match play and gameday exposure",
+    tag: "Gameday",
+    title: "Elite Match Exposure",
+  },
+  {
+    kind: "simple",
+    src: "/website%20shortlisted%20pics/1766918918118.JPG",
+    alt: "Team spirit on the pitch",
+    label: "Team Chemistry",
+  },
+  {
+    kind: "simple",
+    src: "/website%20shortlisted%20pics/1766918918177.jpg",
+    alt: "Professional football coaching",
+    label: "Pro Mentorship",
+  },
+  {
+    kind: "simple",
+    src: "/website%20shortlisted%20pics/1766918918266.jpg",
+    alt: "Celebration after a win",
+    label: "Winning Culture",
+  },
+];
+
+function galleryOverlay(item: GalleryItem) {
+  if (item.kind === "featured") {
+    return (
+      <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#1F1A55]/70 via-[#1F1A55]/20 to-transparent p-6 opacity-100 transition-opacity md:p-8 md:opacity-0 md:group-hover:opacity-100">
+        <div>
+          <p className="mb-1 text-xs font-bold tracking-widest text-[#F28C28] uppercase">
+            {item.tag}
+          </p>
+          <span className="text-xl font-bold tracking-tight text-white md:text-2xl">
+            {item.title}
+          </span>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#1F1A55]/70 via-[#1F1A55]/20 to-transparent p-6 opacity-100 transition-opacity md:opacity-0 md:group-hover:opacity-100">
+      <span className="font-bold tracking-tight text-white">{item.label}</span>
+    </div>
+  );
+}
+
 export function BharatFootballLanding() {
   return (
     <div className="bfa-landing min-h-screen bg-white">
@@ -120,82 +191,53 @@ export function BharatFootballLanding() {
               at India&apos;s premier youth academy.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-            <div className="group relative aspect-square overflow-hidden rounded-[40px] shadow-sm">
-              <Image
-                src="/website%20shortlisted%20pics/1766918917836.jpg"
-                alt="Youth football technical drills at training"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#1F1A55]/70 via-[#1F1A55]/20 to-transparent p-6 opacity-0 transition-opacity group-hover:opacity-100">
-                <span className="font-bold tracking-tight text-white">
-                  Technical Drills
-                </span>
+          <div
+            className="gallery-carousel -mx-6 flex gap-4 overflow-x-auto px-6 pb-4 md:hidden"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Academy photos"
+          >
+            {galleryItems.map((item, index) => (
+              <div
+                key={`m-gallery-${index}`}
+                className={`group relative shrink-0 snap-center snap-always overflow-hidden rounded-[40px] shadow-sm ${
+                  item.kind === "featured"
+                    ? "aspect-[4/3] w-[min(88vw,26rem)] border border-gray-100"
+                    : "aspect-square w-[min(78vw,21rem)]"
+                }`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="88vw"
+                />
+                {galleryOverlay(item)}
               </div>
-            </div>
-            <div className="group relative aspect-[4/3] overflow-hidden rounded-[40px] border border-gray-100 shadow-sm md:col-span-2">
-              <Image
-                src="/website%20shortlisted%20pics/1766918918062.JPG"
-                alt="Match play and gameday exposure"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 100vw, 66vw"
-              />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#1F1A55]/70 via-[#1F1A55]/20 to-transparent p-8 opacity-0 transition-opacity group-hover:opacity-100">
-                <div>
-                  <p className="mb-1 text-xs font-bold tracking-widest text-[#F28C28] uppercase">
-                    Gameday
-                  </p>
-                  <span className="text-2xl font-bold tracking-tight text-white">
-                    Elite Match Exposure
-                  </span>
-                </div>
+            ))}
+          </div>
+
+          <div className="hidden gap-6 md:grid md:grid-cols-3">
+            {galleryItems.map((item, index) => (
+              <div
+                key={`d-gallery-${index}`}
+                className={`group relative overflow-hidden rounded-[40px] shadow-sm ${
+                  item.kind === "featured"
+                    ? "aspect-[4/3] border border-gray-100 md:col-span-2"
+                    : "aspect-square"
+                }`}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+                {galleryOverlay(item)}
               </div>
-            </div>
-            <div className="group relative aspect-square overflow-hidden rounded-[40px] shadow-sm">
-              <Image
-                src="/website%20shortlisted%20pics/1766918918118.JPG"
-                alt="Team spirit on the pitch"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#1F1A55]/70 via-[#1F1A55]/20 to-transparent p-6 opacity-0 transition-opacity group-hover:opacity-100">
-                <span className="font-bold tracking-tight text-white">
-                  Team Chemistry
-                </span>
-              </div>
-            </div>
-            <div className="group relative aspect-square overflow-hidden rounded-[40px] shadow-sm">
-              <Image
-                src="/website%20shortlisted%20pics/1766918918177.jpg"
-                alt="Professional football coaching"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#1F1A55]/70 via-[#1F1A55]/20 to-transparent p-6 opacity-0 transition-opacity group-hover:opacity-100">
-                <span className="font-bold tracking-tight text-white">
-                  Pro Mentorship
-                </span>
-              </div>
-            </div>
-            <div className="group relative aspect-square overflow-hidden rounded-[40px] shadow-sm">
-              <Image
-                src="/website%20shortlisted%20pics/1766918918266.jpg"
-                alt="Celebration after a win"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#1F1A55]/70 via-[#1F1A55]/20 to-transparent p-6 opacity-0 transition-opacity group-hover:opacity-100">
-                <span className="font-bold tracking-tight text-white">
-                  Winning Culture
-                </span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -309,7 +351,7 @@ export function BharatFootballLanding() {
               <Icon icon="lucide:external-link" className="text-sm" />
             </a>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="review-carousel -mx-6 flex gap-6 overflow-x-auto px-6 pb-4 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
             {[
               {
                 name: "Vihan Choudhary",
@@ -335,7 +377,7 @@ export function BharatFootballLanding() {
             ].map((r) => (
               <div
                 key={r.name}
-                className="review-card group rounded-[48px] border border-gray-100 bg-white p-10 shadow-sm transition-all duration-500 hover:shadow-xl"
+                className="review-card group w-[min(88vw,24rem)] shrink-0 snap-center snap-always rounded-[48px] border border-gray-100 bg-white p-10 shadow-sm transition-all duration-500 hover:shadow-xl md:w-auto md:shrink md:snap-none"
               >
                 <div className="mb-8 flex items-center gap-4">
                   <div className="relative">
