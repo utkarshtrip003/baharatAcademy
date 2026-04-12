@@ -24,7 +24,7 @@ type GalleryItem =
 const galleryItems: GalleryItem[] = [
   {
     kind: "simple",
-    src: "/website%20shortlisted%20pics/1766918917836.jpg",
+    src: "/website%20shortlisted%20pics/WhatsApp%20Image%202026-04-09%20at%209.41.38%20AM.jpeg",
     alt: "Youth football technical drills at training",
     label: "Technical Drills",
   },
@@ -43,14 +43,14 @@ const galleryItems: GalleryItem[] = [
   },
   {
     kind: "simple",
-    src: "/website%20shortlisted%20pics/1766918918177.jpg",
-    alt: "Professional football coaching",
+    src: "/website%20shortlisted%20pics/WhatsApp%20Image%202026-04-09%20at%209.41.37%20AM%20%282%29.jpeg",
+    alt: "Professional football coaching and pro mentorship",
     label: "Pro Mentorship",
   },
   {
     kind: "simple",
-    src: "/website%20shortlisted%20pics/1766918918266.jpg",
-    alt: "Celebration after a win",
+    src: "/website%20shortlisted%20pics/WhatsApp%20Image%202026-04-09%20at%209.41.37%20AM.jpeg",
+    alt: "Team celebration and winning culture",
     label: "Winning Culture",
   },
 ];
@@ -264,34 +264,46 @@ export function BharatFootballLanding() {
             <div className="hidden items-center gap-3 rounded-3xl border border-[#F28C28]/20 bg-[#F28C28]/10 px-8 py-4 font-bold text-[#1F1A55] shadow-sm lg:flex">
               <Icon icon="lucide:award" className="text-3xl text-[#F28C28]" />
               <div className="leading-tight">
-                <span className="block text-2xl tracking-tighter">25+</span>
+                <span className="block text-2xl tracking-tighter">GYL</span>
                 <span className="text-[10px] tracking-widest uppercase">
-                  Championships
+                  DPDL • Pride Cup
                 </span>
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "DPDL Champions",
-                sub: "U-14 Division • 2023",
+                title: "Under 7 Winners — GYL",
+                sub: "2024–25 season",
               },
               {
-                title: "GYL Cup Winners",
-                sub: "U-10 Division • 2023",
+                title: "Under 7 Winners — Silver Cup",
+                sub: "2025–26 GYL",
               },
               {
-                title: "National Youth Cup",
-                sub: "Finalists • 2022",
+                title: "Under 8 — 4th Position",
+                sub: "DPDL 2025–26 season",
               },
               {
-                title: "International Tours",
-                sub: "Dubai Cup • 2024",
+                title: "Pride Cup — Winner (U-10)",
+                sub: "Gurgaon edition 2025–26",
+              },
+              {
+                title: "Pride Cup — Winner (U-10)",
+                sub: "Delhi edition 2025–26",
+              },
+              {
+                title: "Pride Cup — Winner (U-8)",
+                sub: "Delhi edition 2025–26",
+              },
+              {
+                title: "Pride Cup — Runners Up (U-12)",
+                sub: "Delhi edition 2025–26",
               },
             ].map((item) => (
               <div
-                key={item.title}
+                key={`${item.title}-${item.sub}`}
                 className="group rounded-[40px] border border-gray-100 bg-gray-50 p-8 transition-all duration-300 hover:border-[#F28C28] hover:bg-white hover:shadow-xl hover:shadow-[#F28C28]/5"
               >
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm transition-colors group-hover:bg-[#F28C28]/5">
@@ -308,6 +320,65 @@ export function BharatFootballLanding() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="founder" className="border-t border-gray-50 bg-white py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-3xl">
+            <span className="mb-4 block text-xs font-bold tracking-widest text-[#F28C28] uppercase">
+              Leadership
+            </span>
+            <h2 className="mb-6 text-4xl font-bold tracking-tight text-[#1F1A55] md:text-5xl">
+              About the Founder
+            </h2>
+            <p className="mb-10 text-xl font-bold text-[#1F1A55]">
+              Amit Kumar Sharma
+            </p>
+            <div className="space-y-6 text-lg leading-relaxed text-gray-600">
+              <p>
+                Amit Kumar Sharma, the founder of Bharat Football Academy, is a
+                passionate football professional whose journey began at the age
+                of 12. From representing his school at national-level competitions
+                to competing in college football, he steadily progressed to the
+                professional stage, playing in the I-League 2nd Division for clubs
+                such as Hindustan Football Club and N.D Hero&apos;s FC.
+              </p>
+              <p>
+                After his playing career, Amit transitioned into coaching in 2013
+                with a clear vision—to provide structured and high-quality
+                football training to young players in India. He earned his AIFF D
+                License from Mumbai in 2015 and went on to complete his AFC C
+                Diploma from Odisha in 2016, strengthening his technical and
+                tactical expertise.
+              </p>
+              <p>
+                Amit gained valuable international exposure through his association
+                with the Barcelona Football Academy, where he worked under renowned
+                Spanish coaches including Aitor Olmo, David Jarey, and Jordi.
+                These experiences helped him develop a modern, player-centric
+                approach focused on long-term development.
+              </p>
+              <p>
+                Before establishing Bharat Football Academy, he also worked
+                closely with Japanese professional Takeru Takamatsu as a team
+                manager, gaining insights into global football culture,
+                discipline, and professionalism.
+              </p>
+              <p>
+                The idea of Bharat Football Academy was conceived in 2016 and
+                officially brought to life in 2020. Since then, Amit Kumar Sharma
+                has been dedicated to nurturing young talent, not only as
+                footballers but as confident, disciplined, and responsible
+                individuals.
+              </p>
+              <p>
+                Under his leadership, the academy continues to grow as a platform
+                for excellence, delivering quality training and shaping the future
+                of aspiring footballers.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -626,69 +697,39 @@ export function BharatFootballLanding() {
         </div>
       </section>
 
-      <section id="coaches" className="bg-white py-24">
+      <section id="team" className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
             <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
-              Meet Our Coaching Team
+              Our Team
             </h2>
             <p className="text-lg text-gray-600">
-              Expert mentors dedicated to nurturing the next generation of
-              football talent.
+              Coaches and players building the Bharat Football Academy community
+              together.
             </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-2">
             {[
               {
-                name: "Coach Vikram Singh",
-                role: "Head Coach (AFC-A)",
-                img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600",
-                exp: "12+ Years Experience",
+                src: "/website%20shortlisted%20pics/team1.jpeg",
+                alt: "Bharat Football Academy team group photo",
               },
               {
-                name: "Coach Rohan Mehra",
-                role: "Youth Scout (AFC-B)",
-                img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600",
-                exp: "8+ Years Experience",
+                src: "/website%20shortlisted%20pics/team2.jpeg",
+                alt: "Bharat Football Academy team on the pitch",
               },
-              {
-                name: "Coach Arjun Khanna",
-                role: "Conditioning Coach",
-                img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600",
-                exp: "6+ Years Experience",
-              },
-              {
-                name: "Coach Sameer Malik",
-                role: "Goalkeeping Specialist",
-                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600",
-                exp: "10+ Years Experience",
-              },
-            ].map((c) => (
-              <div key={c.name} className="group">
-                <div className="relative mb-6 aspect-[4/5] overflow-hidden rounded-[32px] bg-gray-100">
-                  <Image
-                    src={c.img}
-                    alt={c.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  />
-                </div>
-                <h3 className="mb-1 text-xl font-bold tracking-tight text-[#1F1A55]">
-                  {c.name}
-                </h3>
-                <p className="mb-4 text-sm font-bold tracking-wider text-[#1C7C54] uppercase">
-                  {c.role}
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
-                    <Icon
-                      icon="lucide:check-circle"
-                      className="text-[#F28C28]"
-                    />
-                    <span>{c.exp}</span>
-                  </div>
-                </div>
+            ].map((photo) => (
+              <div
+                key={photo.src}
+                className="group relative aspect-[4/3] overflow-hidden rounded-[32px] bg-gray-100 shadow-sm md:aspect-[16/10]"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             ))}
           </div>
@@ -809,6 +850,15 @@ export function BharatFootballLanding() {
                     className="hover:text-[#F28C28]"
                   >
                     Schedule
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#founder"
+                    id="footer-founder-link"
+                    className="hover:text-[#F28C28]"
+                  >
+                    Founder
                   </a>
                 </li>
               </ul>

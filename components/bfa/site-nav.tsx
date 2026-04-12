@@ -7,8 +7,9 @@ const navLinks = [
   { href: "#gallery", label: "Gallery", id: "nav-gallery-link" },
   { href: "#programs", label: "Programs", id: "nav-programs-link" },
   { href: "#schedule", label: "Schedule", id: "nav-schedule-link" },
-  { href: "#coaches", label: "Coaches", id: "nav-coaches-link" },
+  { href: "#team", label: "Team", id: "nav-team-link" },
   { href: "#tournaments", label: "Tournaments", id: "nav-tournaments-link" },
+  { href: "#founder", label: "Founder", id: "nav-founder-link" },
 ] as const;
 
 const whatsappLink =
