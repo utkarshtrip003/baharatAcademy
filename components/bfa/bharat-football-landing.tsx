@@ -340,25 +340,26 @@ export function BharatFootballLanding() {
               <p>
                 Amit Kumar Sharma, the founder of Bharat Football Academy, is a
                 passionate football professional whose journey began at the age
-                of 12. From representing his school at national-level competitions
-                to competing in college football, he steadily progressed to the
-                professional stage, playing in the I-League 2nd Division for clubs
-                such as Hindustan Football Club and N.D Hero&apos;s FC.
+                of 12. From representing his school at national-level
+                competitions to competing in college football, he steadily
+                progressed to the professional stage, playing in the I-League
+                2nd Division for clubs such as Hindustan Football Club and N.D
+                Hero&apos;s FC.
               </p>
               <p>
-                After his playing career, Amit transitioned into coaching in 2013
-                with a clear vision—to provide structured and high-quality
-                football training to young players in India. He earned his AIFF D
-                License from Mumbai in 2015 and went on to complete his AFC C
+                After his playing career, Amit transitioned into coaching in
+                2013 with a clear vision—to provide structured and high-quality
+                football training to young players in India. He earned his AIFF
+                D License from Mumbai in 2015 and went on to complete his AFC C
                 Diploma from Odisha in 2016, strengthening his technical and
                 tactical expertise.
               </p>
               <p>
-                Amit gained valuable international exposure through his association
-                with the Barcelona Football Academy, where he worked under renowned
-                Spanish coaches including Aitor Olmo, David Jarey, and Jordi.
-                These experiences helped him develop a modern, player-centric
-                approach focused on long-term development.
+                Amit gained valuable international exposure through his
+                association with the Barcelona Football Academy, where he worked
+                under renowned Spanish coaches including Aitor Olmo, David
+                Jarey, and Jordi. These experiences helped him develop a modern,
+                player-centric approach focused on long-term development.
               </p>
               <p>
                 Before establishing Bharat Football Academy, he also worked
@@ -368,22 +369,25 @@ export function BharatFootballLanding() {
               </p>
               <p>
                 The idea of Bharat Football Academy was conceived in 2016 and
-                officially brought to life in 2020. Since then, Amit Kumar Sharma
-                has been dedicated to nurturing young talent, not only as
+                officially brought to life in 2020. Since then, Amit Kumar
+                Sharma has been dedicated to nurturing young talent, not only as
                 footballers but as confident, disciplined, and responsible
                 individuals.
               </p>
               <p>
-                Under his leadership, the academy continues to grow as a platform
-                for excellence, delivering quality training and shaping the future
-                of aspiring footballers.
+                Under his leadership, the academy continues to grow as a
+                platform for excellence, delivering quality training and shaping
+                the future of aspiring footballers.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="reviews" className="border-y border-gray-100 bg-gray-50 py-24">
+      <section
+        id="reviews"
+        className="border-y border-gray-100 bg-gray-50 py-24"
+      >
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 flex flex-col items-center justify-between gap-8 text-center md:flex-row md:text-left">
             <div>
@@ -456,10 +460,7 @@ export function BharatFootballLanding() {
                       <Icon icon="lucide:user" className="text-2xl" />
                     </div>
                     <div className="absolute -right-1 -bottom-1 rounded-full bg-white p-1 shadow-sm">
-                      <Icon
-                        icon="logos:google-icon"
-                        className="text-[10px]"
-                      />
+                      <Icon icon="logos:google-icon" className="text-[10px]" />
                     </div>
                   </div>
                   <div>
@@ -546,7 +547,7 @@ export function BharatFootballLanding() {
                 Sector 55, Golf Course Road, Gurgaon
               </p>
               <div className="flex items-center text-sm font-bold tracking-widest text-[#1C7C54] uppercase">
-                Weekend Match Facility
+                Monday Wednesday and Friday 5 pm to 7 pm
               </div>
             </div>
           </div>
@@ -598,7 +599,10 @@ export function BharatFootballLanding() {
             </div>
             <div className="text-center">
               <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-green-50">
-                <Icon icon="lucide:swords" className="text-3xl text-[#1C7C54]" />
+                <Icon
+                  icon="lucide:swords"
+                  className="text-3xl text-[#1C7C54]"
+                />
               </div>
               <h3 className="mb-4 text-xl font-bold tracking-tight">
                 Competitive Exposure
@@ -669,14 +673,16 @@ export function BharatFootballLanding() {
                     Sushant University
                   </h3>
                   <p className="text-sm text-gray-500">
-                    Weekend & Evening Sessions
+                    Sector 55 · Weekday evening batches
                   </p>
                 </div>
               </div>
               <div className="space-y-4">
                 {[
-                  { age: "Ages 4 - 6", time: "Sat & Sun: 9 AM" },
-                  { age: "Ages 7 - 12", time: "Sat & Sun: 10 AM" },
+                  {
+                    age: "Mon, Wed & Fri",
+                    time: "5:00 PM - 7:00 PM",
+                  },
                 ].map((row) => (
                   <div
                     key={row.age}
@@ -906,8 +912,7 @@ export function BharatFootballLanding() {
                       92669 93485
                     </a>
                   </div>
-
-                 </div>
+                </div>
 
                 <div className="md:justify-self-end">
                   <div className="relative w-full max-w-[420px] overflow-hidden rounded-[36px] border border-gray-100 bg-gray-50 shadow-sm">
@@ -918,7 +923,7 @@ export function BharatFootballLanding() {
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                         src={`https://www.google.com/maps?q=${encodeURIComponent(
-                          "Bharat Football Academy Gurugram"
+                          "Bharat Football Academy Gurugram",
                         )}&output=embed`}
                       />
                     </div>
