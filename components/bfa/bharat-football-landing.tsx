@@ -87,7 +87,7 @@ export function BharatFootballLanding() {
             src={heroImg}
             alt="Football field at Bharat Football Academy"
             fill
-            className="object-cover"
+            className="object-cover object-[25%_center] md:object-center"
             sizes="100vw"
             priority
           />
