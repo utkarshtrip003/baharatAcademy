@@ -3,8 +3,7 @@ import Image from "next/image";
 import { SiteNav } from "./site-nav";
 import { TrialForm } from "./trial-form";
 
-const heroImg =
-  "https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000";
+const heroImg = "/website%20shortlisted%20pics/hero.jpeg";
 
 type GalleryItem =
   | {
@@ -121,27 +120,15 @@ export function BharatFootballLanding() {
               </a>
               <div className="flex items-center gap-4 px-6">
                 <div className="flex -space-x-3">
-                  <Image
-                    className="h-10 w-10 rounded-full border-2 border-[#1F1A55] object-cover"
-                    src="https://i.pravatar.cc/100?u=1"
-                    alt=""
-                    width={40}
-                    height={40}
-                  />
-                  <Image
-                    className="h-10 w-10 rounded-full border-2 border-[#1F1A55] object-cover"
-                    src="https://i.pravatar.cc/100?u=2"
-                    alt=""
-                    width={40}
-                    height={40}
-                  />
-                  <Image
-                    className="h-10 w-10 rounded-full border-2 border-[#1F1A55] object-cover"
-                    src="https://i.pravatar.cc/100?u=3"
-                    alt=""
-                    width={40}
-                    height={40}
-                  />
+                  {[0, 1, 2].map((i) => (
+                    <div
+                      key={i}
+                      className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white/40 bg-zinc-200/90 text-[#1F1A55] shadow-sm"
+                      aria-hidden="true"
+                    >
+                      <Icon icon="lucide:user" className="text-lg" />
+                    </div>
+                  ))}
                 </div>
                 <span className="text-sm font-medium text-white">
                   500+ Active Players
@@ -529,7 +516,7 @@ export function BharatFootballLanding() {
                 Sector 43, Shashank Lok Phase 1, Gurgaon
               </p>
               <div className="flex items-center text-sm font-bold tracking-widest text-[#1C7C54] uppercase">
-                Daily Training Available
+                Mon to Fri
               </div>
             </div>
 
@@ -547,7 +534,7 @@ export function BharatFootballLanding() {
                 Sector 55, Golf Course Road, Gurgaon
               </p>
               <div className="flex items-center text-sm font-bold tracking-widest text-[#1C7C54] uppercase">
-                Monday Wednesday and Friday 5 pm to 7 pm
+                Mon to Fri
               </div>
             </div>
           </div>
@@ -638,18 +625,35 @@ export function BharatFootballLanding() {
                     Excelsior American School
                   </h3>
                   <p className="text-sm text-gray-500">
-                    Weekday Training (Mon - Sat)
+                    Sector 43 · Weekday batches
                   </p>
                 </div>
               </div>
               <div className="space-y-4">
                 {[
-                  { age: "Ages 4 - 6", time: "4:00 PM - 5:00 PM" },
-                  { age: "Ages 7 - 9", time: "4:00 PM - 5:30 PM" },
-                  { age: "Ages 10 - 12", time: "5:30 PM - 7:00 PM" },
+                  {
+                    age: "Mon, Wed & Fri — U8 & U10",
+                    time: "4:30 PM - 5:30 PM",
+                  },
+                  {
+                    age: "Mon, Wed & Fri — U8 & U10",
+                    time: "5:30 PM - 6:30 PM",
+                  },
+                  {
+                    age: "Mon, Wed & Fri — U12 & U15",
+                    time: "6:30 PM - 7:30 PM",
+                  },
+                  {
+                    age: "Tue & Thu — Advanced Batch (U12)",
+                    time: "4:30 PM - 5:30 PM",
+                  },
+                  {
+                    age: "Tue & Thu — U6 Kids Training",
+                    time: "5:30 PM - 6:30 PM",
+                  },
                 ].map((row) => (
                   <div
-                    key={row.age}
+                    key={`${row.age}-${row.time}`}
                     className="flex items-center justify-between rounded-2xl border border-gray-100 bg-gray-50 p-5"
                   >
                     <div className="flex items-center gap-3">
@@ -680,12 +684,24 @@ export function BharatFootballLanding() {
               <div className="space-y-4">
                 {[
                   {
-                    age: "Mon, Wed & Fri",
-                    time: "5:00 PM - 7:00 PM",
+                    age: "Mon, Wed & Fri — U8 & U10",
+                    time: "5:00 PM - 6:00 PM",
+                  },
+                  {
+                    age: "Mon, Wed & Fri — U12 & U14",
+                    time: "6:00 PM - 7:00 PM",
+                  },
+                  {
+                    age: "Tue & Thu — U6 & U8",
+                    time: "5:00 PM - 6:00 PM",
+                  },
+                  {
+                    age: "Tue & Thu — U10, U12 & U14",
+                    time: "6:00 PM - 7:00 PM",
                   },
                 ].map((row) => (
                   <div
-                    key={row.age}
+                    key={`${row.age}-${row.time}`}
                     className="flex items-center justify-between rounded-2xl border border-gray-100 bg-gray-50 p-5"
                   >
                     <div className="flex items-center gap-3">
